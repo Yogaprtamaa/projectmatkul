@@ -20,6 +20,6 @@ tiga halaman yang responsif di ponsel (≈ 375px) maupun desktop.
 - `contact.html` — Kontak
 - `style.css`, `assets/`
 
-## Website (Vercel)
+## Website 
 
-[ISI URL VERCEL SETELAH DEPLOY]
+https://github.com/Yogaprtamaa/projectmatkul
