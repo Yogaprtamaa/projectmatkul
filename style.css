@@ -1,71 +1,63 @@
-/* Custom override untuk Bootstrap 5 */
+/* Apple HIG tokens + companion untuk Tailwind
+   Prinsip: Clarity, Deference, Depth
+   Ref: superdesign.dev/blog/apple-design-system */
 :root {
-    --brand: rgb(175, 55, 55);
+    --system-blue: #007AFF;
+    --system-green: #34C759;
+    --system-red: #FF3B30;
+    --label: #000000;
+    --secondary-label: #3C3C43;
+    --tertiary-label: rgba(60, 60, 67, 0.6);
+    --background: #FFFFFF;
+    --secondary-bg: #F2F2F7;
+    --glass: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --label: #FFFFFF;
+        --secondary-label: #EBEBF5;
+        --tertiary-label: rgba(235, 235, 245, 0.6);
+        --background: #000000;
+        --secondary-bg: #1C1C1E;
+        --glass: rgba(28, 28, 30, 0.7);
+        --glass-border: rgba(255, 255, 255, 0.12);
+        --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #222;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', system-ui, 'Segoe UI', sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    background-color: var(--secondary-bg);
+    color: var(--label);
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Navbar */
-.custom-navbar {
-    background-color: var(--brand);
-    border-radius: 20px;
-    margin: 20px;
+/* Liquid Glass: layer translucent di atas konten */
+.glass {
+    background-color: var(--glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--card-shadow);
 }
 
-/* Hero */
 .hero-img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--card-shadow);
 }
 
-/* Section */
-.content-narrow {
-    max-width: 800px;
-}
-
-.section-title {
-    color: var(--brand);
-}
-
-/* Buttons */
-.btn-custom {
-    background-color: var(--brand);
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-}
-
-.btn-custom:hover {
-    background-color: rgb(140, 40, 40);
-    color: #fff;
-}
-
-/* Table */
-.table-custom th {
-    background-color: var(--brand);
-    color: #fff;
-}
-
-/* Cards */
-.card {
-    border-radius: 15px;
-}
-
-.card-img-top {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    object-fit: cover;
-    aspect-ratio: 16 / 9;
-}
-
-/* Footer */
-footer {
-    color: #666;
+/* Form focus ring ala iOS */
+.input-apple:focus {
+    outline: 2px solid var(--system-blue);
+    outline-offset: 1px;
+    border-color: var(--system-blue);
 }
