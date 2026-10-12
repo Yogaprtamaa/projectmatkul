@@ -1,53 +1,99 @@
 <!DOCTYPE html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portofolio | Porto</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <nav class="navbar">
-            <span class="logo">Yoga Pratama</span>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="porto.html">Porto</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <a href="contact.html" class="button-primary">Let's talk</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyek-proyek Yoga Pratama">
+    <title>Portofolio | Proyek</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">Yoga Pratama</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#tentang">Tentang Saya</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="porto.html">Proyek</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary ms-lg-3 mt-2 mt-lg-0">Let's talk</a>
+                </div>
+            </div>
         </nav>
+    </header>
 
-        <main class="content">
-            <h1>Portofolio Saya</h1>
-            <p>Berikut project yang pernah saya buat saat belajar web.</p>
+    <main class="py-5">
+        <section id="proyek">
+            <div class="container">
+                <h1 class="section-title">Proyek Saya</h1>
+                <p class="text-muted">Berikut 3 project yang pernah saya buat saat belajar web.</p>
 
-            <section class="card">
-                <h2>1. Halaman Portofolio</h2>
-                <img src="assets/image copy 2.png" alt="tamp     project portofolio">
-                <p>Website portofolio pribadi menggunakan HTML dan CSS.</p>
-                <ul>
-                    <li>HTML5</li>
-                    <li>CSS</li>
-                </ul>
-                <a href="https://d-portofolio.vercel.app/" class="button-porto">Lihat portofolio</a>
-            </section>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+                    <div class="col">
+                        <article class="card h-100 shadow-sm">
+                            <img src="assets/image copy 2.png" class="card-img-top" alt="Tampilan project portofolio">
+                            <div class="card-body d-flex flex-column">
+                                <h2 class="h5 card-title">1. Halaman Portofolio</h2>
+                                <p class="card-text">Website portofolio pribadi menggunakan HTML, CSS, dan Bootstrap 5.</p>
+                                <div class="mb-3">
+                                    <span class="badge text-bg-secondary">HTML5</span>
+                                    <span class="badge text-bg-secondary">CSS</span>
+                                    <span class="badge text-bg-secondary">Bootstrap 5</span>
+                                </div>
+                                <a href="https://d-portofolio.vercel.app/" class="btn btn-custom mt-auto">Lihat portofolio</a>
+                            </div>
+                        </article>
+                    </div>
 
-            <section class="card">
-                <h2>2. Halaman Biodata</h2>
-                <img src="assets/image copy.png" alt="tampilan project biodata">
-                <p>Halaman biodata sederhana</p>
-                <ol>
-                    <li>Yoga Pratama</li>
-                    <li>prtmyog17@gmail.com</li>
-                </ol>
-            </section>
+                    <div class="col">
+                        <article class="card h-100 shadow-sm">
+                            <img src="assets/image copy.png" class="card-img-top" alt="Tampilan project biodata">
+                            <div class="card-body d-flex flex-column">
+                                <h2 class="h5 card-title">2. Halaman Biodata</h2>
+                                <p class="card-text">Halaman biodata sederhana dengan tabel dan form responsif.</p>
+                                <ul class="small text-muted">
+                                    <li>Yoga Pratama</li>
+                                    <li>prtmyog17@gmail.com</li>
+                                </ul>
+                                <a href="index.html#tentang" class="btn btn-outline-secondary mt-auto">Lihat biodata</a>
+                            </div>
+                        </article>
+                    </div>
 
-            <p>Lihat kode saya di <a href="https://github.com/Yogaprtamaa">GitHub</a></p>
-        </main>
+                    <div class="col">
+                        <article class="card h-100 shadow-sm">
+                            <img src="assets/image.png" class="card-img-top" alt="Tampilan project smart contract Solana">
+                            <div class="card-body d-flex flex-column">
+                                <h2 class="h5 card-title">3. Rust Anchor Smart Contract</h2>
+                                <p class="card-text">Smart contract Solana memakai Anchor (Rust): struktur program, akun, dan instruksi.</p>
+                                <div class="mb-3">
+                                    <span class="badge text-bg-secondary">Rust</span>
+                                    <span class="badge text-bg-secondary">Anchor</span>
+                                    <span class="badge text-bg-secondary">Solana</span>
+                                </div>
+                                <a href="https://github.com/Yogaprtamaa/contract-rust" class="btn btn-custom mt-auto">Lihat di GitHub</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
 
-        <footer>
-            <p>&copy; 2026 Yoga Pratama</p>
-        </footer>
-    </body>
+                <p class="mt-4">Lihat kode saya lainnya di <a href="https://github.com/Yogaprtamaa">GitHub</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-4">
+        <p class="mb-0">&copy; 2026 Yoga Pratama</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

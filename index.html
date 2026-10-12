@@ -1,73 +1,106 @@
 <!DOCTYPE html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portofolio | Home</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <nav class="navbar">
-            <span class="logo">Yoga Pratama</span>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="porto.html">Porto</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <a href="contact.html" class="button-primary">Let's talk</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Yoga Pratama - Junior Web Developer">
+    <title>Portofolio | Beranda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">Yoga Pratama</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#tentang">Tentang Saya</a></li>
+                        <li class="nav-item"><a class="nav-link" href="porto.html">Proyek</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary ms-lg-3 mt-2 mt-lg-0">Let's talk</a>
+                </div>
+            </div>
         </nav>
+    </header>
 
-        <main>
-            <section class="hero">
-                <img src="assets/image.png" alt="foto profile">
-                <h1>Hi, I'm Yoga Pratama</h1>
-                <p>Junior Web Developer</p>
-                <a href="contact.html" class="button-primary">Let's talk</a>
-            </section>
+    <main>
+        <!-- Beranda -->
+        <section id="beranda" class="py-5">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-12 col-md-6 text-center text-md-start">
+                        <p class="text-muted mb-1">Halo, selamat datang di portofolio saya</p>
+                        <h1 class="display-5 fw-bold">Hi, I'm Yoga Pratama</h1>
+                        <p class="lead">Junior Web Developer</p>
+                        <p>Saya belajar pengembangan web modern: HTML, CSS, dan smart contract Solana (Rust Anchor).</p>
+                        <div class="d-flex gap-2 justify-content-center justify-content-md-start flex-wrap">
+                            <a href="porto.html" class="btn btn-custom">Lihat Proyek</a>
+                            <a href="contact.html" class="btn btn-primary">Let's talk</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <img src="assets/image.png" alt="Foto profil Yoga Pratama" class="img-fluid hero-img">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <section id="about" class="content">
-                <h1>Tentang Saya</h1>
+        <!-- Tentang Saya -->
+        <section id="tentang" class="py-5 bg-white">
+            <div class="container content-narrow">
+                <h2 class="section-title">Tentang Saya</h2>
                 <p>Halo, nama saya Yoga Pratama. Saya sedang belajar biar ga jadi web dev terus cape fetching di lib sama middleware token jwt sama server side auth, mau punya usaha ternak lele.</p>
 
-                <h2>Biodata</h2>
-                <table>
-                    <tr>
-                        <th>Keterangan</th>
-                        <th>Isi</th>
-                    </tr>
-                    <tr>
-                        <td>Nama</td>
-                        <td>Yoga Pratama</td>
-                    </tr>
-                    <tr>
-                        <td>Profesi</td>
-                        <td>Junior Web Developer</td>
-                    </tr>
-                    <tr>
-                        <td>Lokasi</td>
-                        <td>Indonesia</td>
-                    </tr>
-                </table>
+                <h3 class="mt-4">Biodata</h3>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-custom">
+                            <tr>
+                                <th scope="col">Keterangan</th>
+                                <th scope="col">Isi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Nama</td><td>Yoga Pratama</td></tr>
+                            <tr><td>Profesi</td><td>Junior Web Developer</td></tr>
+                            <tr><td>Lokasi</td><td>Indonesia</td></tr>
+                        </tbody>
+                    </table>
+                </div>
 
-                <h2>Skill</h2>
-                <ul>
-                    <li>HTML pas masih jaman sublime 5</li>
-                    <li>CSS (cuma bisa tailwind gasuka bootstrap)</li>
-                    <li><a href="https://github.com/Yogaprtamaa/contract-rust">Rust Anchor Smart Contract Solana</a></li>
-                </ul>
+                <div class="row g-4 mt-1">
+                    <div class="col-12 col-md-6">
+                        <h3>Skill</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item">HTML <span class="badge text-bg-secondary ms-1">sejak era Sublime</span></li>
+                            <li class="list-group-item">CSS / Tailwind</li>
+                            <li class="list-group-item"><a href="https://github.com/Yogaprtamaa/contract-rust">Rust Anchor Smart Contract Solana</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h3>Hobi</h3>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">Baca Substack</li>
+                            <li class="list-group-item">Kritik Pemerintah</li>
+                            <li class="list-group-item">Baca Substack lagi</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-                <h2>Hobi</h2>
-                <ol>
-                    <li>Baca Substack</li>
-                    <li>Kritik Pemerintah</li>
-                    <li>Baca Substack lagi</li>
-                </ol>
-            </section>
-        </main>
+    <footer class="text-center py-4">
+        <p class="mb-0">&copy; 2026 Yoga Pratama</p>
+    </footer>
 
-        <footer>
-            <p>&copy; 2026 Yoga Pratama</p>
-        </footer>
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
