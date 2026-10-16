@@ -1,7 +1,7 @@
 # Portofolio – Yoga Pratama
 
 **Nama:** Yoga Pratama
-**NIM:** [ISI NIM]
+**NIM:** 125103056
 
 Website portofolio pribadi sebagai tugas Pertemuan 3 Pemrograman Web.
 Memuat bagian Beranda, Tentang Saya, Proyek (3 item), dan Kontak dalam
