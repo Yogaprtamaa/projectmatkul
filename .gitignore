@@ -1,2 +1,7 @@
 # Modul PDF hanya acuan lokal, jangan ikut ke-commit / deploy
 Modul_Pertemuan_3_Pemrograman_Web.docx.pdf
+
+# Kredensial jangan pernah di-commit
+.env
+.env.*
+!.env.example

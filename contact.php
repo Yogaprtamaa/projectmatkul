@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/partials/functions.php';
+require_once __DIR__ . '/partials/database.php';
 
 $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 $submitted = $method === 'POST';
@@ -27,7 +28,26 @@ if ($submitted) {
     }
 }
 
-$success = $submitted && empty($errors);
+if ($submitted && empty($errors)) {
+    try {
+        $statement = db()->prepare(
+            'INSERT INTO messages (nama, email, pesan) VALUES (:nama, :email, :pesan)'
+        );
+        $statement->execute([
+            'nama' => $nama,
+            'email' => $email,
+            'pesan' => $pesan,
+        ]);
+
+        header('Location: contact.php?status=sukses');
+        exit;
+    } catch (PDOException $exception) {
+        error_log('Gagal menyimpan pesan: ' . $exception->getMessage());
+        $errors[] = 'Pesan gagal disimpan. Silakan coba lagi.';
+    }
+}
+
+$success = !$submitted && ($_GET['status'] ?? '') === 'sukses';
 
 $title = 'Portofolio | Kontak';
 $active = 'kontak';
@@ -51,12 +71,7 @@ require __DIR__ . '/partials/header.php';
                     </div>
                 <?php elseif ($success): ?>
                     <div class="mt-4 rounded-apple border border-systemgreen/30 bg-systemgreen/10 p-4 text-[15px]" role="status">
-                        <p class="font-semibold text-systemgreen">Pesan berhasil dikirim.</p>
-                        <dl class="mt-2 space-y-1">
-                            <div><dt class="inline font-medium">Nama:</dt> <dd class="inline"><?= e($nama) ?></dd></div>
-                            <div><dt class="inline font-medium">Email:</dt> <dd class="inline"><?= e($email) ?></dd></div>
-                            <div><dt class="inline font-medium">Pesan:</dt> <dd class="inline"><?= e($pesan) ?></dd></div>
-                        </dl>
+                        <p class="font-semibold text-systemgreen">Pesan berhasil dikirim dan tersimpan.</p>
                     </div>
                 <?php endif; ?>
 
@@ -83,7 +98,7 @@ require __DIR__ . '/partials/header.php';
                             <textarea class="input-apple w-full rounded-xl px-4 py-3 border border-black/10 dark:border-white/20 bg-white dark:bg-black" id="pesan" name="pesan" rows="5" placeholder="Tulis pesan..." required><?= e($pesan) ?></textarea>
                         </div>
                         <button type="submit" class="w-full min-h-tap rounded-full bg-systemblue text-white font-semibold">Kirim Pesan</button>
-                        <p class="mt-2 text-[13px] opacity-60">Form ini menggunakan method <strong>POST</strong>. Contoh fitur <strong>GET</strong> ada di <a class="text-systemblue" href="porto.php">pencarian proyek</a>.</p>
+                        <p class="mt-2 text-[13px] opacity-60">Form ini menggunakan method <strong>POST</strong> dan disimpan ke PostgreSQL. Contoh fitur <strong>GET</strong> ada di <a class="text-systemblue" href="porto.php">pencarian proyek</a>.</p>
                     </form>
                 </div>
             </div>
