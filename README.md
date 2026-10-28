@@ -20,10 +20,15 @@ tiga halaman PHP yang responsif di ponsel (≈ 375px) maupun desktop.
 - `index.php` — Beranda + Tentang Saya
 - `porto.php` — Proyek (3 item) + pencarian dengan method `GET`
 - `contact.php` — Form kontak dengan method `POST` + simpan ke PostgreSQL
+- `index.html`, `porto.html`, `contact.html` — versi statis untuk Vercel
+- `api/contact.php` — endpoint PHP serverless untuk Vercel
+- `config.js` — URL endpoint PHP untuk form kontak statis
+- `vercel.json` — konfigurasi runtime `vercel-php`
 - `latihan.php` — Latihan dasar PHP
-- `partials/` — `header.php`, `footer.php`, `functions.php`, `database.php`
+- `partials/` — `header.php`, `footer.php`, `functions.php`, `database.php`, `env.php`
 - `config/database.php` — konfigurasi koneksi database
 - `database/schema.sql` — tabel `messages`
+- `.vercelignore` — mengecualikan halaman PHP lama dari deploy Vercel
 - `style.css`, `assets/`
 
 ## Setup Database (PostgreSQL)
@@ -68,6 +73,29 @@ php -S localhost:8000
 ```
 
 Lalu buka http://localhost:8000/index.php
+
+## Deploy ke Vercel
+
+Vercel bisa menjalankan PHP lewat runtime komunitas `vercel-php` (PHP 8.5,
+termasuk ekstensi `pdo_pgsql`). Konfigurasinya ada di `vercel.json`.
+
+1. Import repo ke Vercel.
+2. Isi environment variable database di **Project Settings → Environment Variables**:
+   `DATABASE_URL`, atau `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASS`, `DB_SSLMODE`.
+   Jangan upload `.env.local`.
+3. Jalankan `database/schema.sql` di PostgreSQL (Supabase).
+4. Deploy. Halaman HTML dilayani statis, sedangkan `/contact.php` diarahkan ke
+   `api/contact.php` dan dieksekusi oleh runtime PHP.
+
+`config.js` default ke `contact.php`, jadi form POST tetap satu domain.
+Kalau mau PHP di server terpisah, ganti endpoint:
+
+```js
+window.CONTACT_ENDPOINT = "https://domain-server-php/contact.php";
+```
+
+Form kontak mengirim POST via `fetch`, dan `api/contact.php` membalas JSON.
+Pencarian proyek di `porto.html` memakai query GET (`porto.html?q=...`).
 
 ## Website
 

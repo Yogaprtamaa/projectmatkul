@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyek-proyek Yoga Pratama">
+    <title>Portofolio | Proyek</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'media',
+            theme: {
+                extend: {
+                    colors: { systemblue: '#007AFF', systemgreen: '#34C759', systemred: '#FF3B30' },
+                    fontFamily: { system: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro', 'system-ui', 'Segoe UI', 'sans-serif'] },
+                    borderRadius: { apple: '18px' },
+                    minHeight: { tap: '44px' },
+                    minWidth: { tap: '44px' }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-system">
+    <header class="px-4 pt-4">
+        <nav class="glass max-w-5xl mx-auto rounded-apple px-4 py-2">
+            <div class="flex items-center justify-between min-h-tap">
+                <a href="index.html" class="font-bold text-[17px] tracking-tight">Yoga Pratama</a>
+                <button id="navToggle" class="lg:hidden min-w-tap min-h-tap flex items-center justify-center rounded-full" aria-label="Toggle navigation" aria-expanded="false">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                </button>
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="index.html" class="min-h-tap inline-flex items-center px-4 rounded-full opacity-70 hover:opacity-100">Beranda</a>
+                    <a href="index.html#tentang" class="min-h-tap inline-flex items-center px-4 rounded-full opacity-70 hover:opacity-100">Tentang Saya</a>
+                    <a href="porto.html" aria-current="page" class="min-h-tap inline-flex items-center px-4 rounded-full font-semibold text-systemblue">Proyek</a>
+                    <a href="contact.html" class="min-h-tap inline-flex items-center px-4 rounded-full opacity-70 hover:opacity-100">Kontak</a>
+                    <a href="contact.html" class="min-h-tap inline-flex items-center px-6 ml-2 rounded-full bg-systemblue text-white font-semibold">Let's talk</a>
+                </div>
+            </div>
+            <div id="mobileMenu" class="hidden lg:hidden pb-3 flex flex-col gap-1">
+                <a href="index.html" class="min-h-tap flex items-center px-4 rounded-xl">Beranda</a>
+                <a href="index.html#tentang" class="min-h-tap flex items-center px-4 rounded-xl">Tentang Saya</a>
+                <a href="porto.html" aria-current="page" class="min-h-tap flex items-center px-4 rounded-xl font-semibold text-systemblue">Proyek</a>
+                <a href="contact.html" class="min-h-tap flex items-center px-4 rounded-xl">Kontak</a>
+                <a href="contact.html" class="min-h-tap flex items-center justify-center px-4 rounded-full bg-systemblue text-white font-semibold mt-1">Let's talk</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-10">
+        <section id="proyek">
+            <div class="max-w-5xl mx-auto px-4">
+                <h1 class="text-[34px] leading-[1.15] tracking-[-0.02em] font-bold">Proyek Saya</h1>
+                <p class="text-[15px] opacity-60 mt-1">Berikut 3 project yang pernah saya buat saat belajar web.</p>
+
+                <form id="searchForm" action="porto.html" method="get" class="glass rounded-apple p-4 mt-4 flex flex-col sm:flex-row gap-2">
+                    <label for="q" class="sr-only">Cari proyek</label>
+                    <input type="search" id="q" name="q" placeholder="Cari proyek, mis. Tailwind, Solana..." class="input-apple flex-1 min-h-tap rounded-xl px-4 border border-black/10 dark:border-white/20 bg-white dark:bg-black">
+                    <button type="submit" class="min-h-tap px-6 rounded-full bg-systemblue text-white font-semibold">Cari (GET)</button>
+                    <a id="resetSearch" href="porto.html" class="hidden min-h-tap items-center justify-center px-6 rounded-full glass font-semibold">Reset</a>
+                </form>
+
+                <p id="searchInfo" class="mt-3 text-[15px] hidden"></p>
+
+                <div id="projectGrid" class="grid gap-4 md:grid-cols-3 mt-4">
+                    <article class="project-card glass rounded-apple overflow-hidden flex flex-col h-full" data-search="halaman portofolio website portofolio pribadi menggunakan html css tailwind html5 css tailwind">
+                        <img src="assets/image copy 2.png" class="w-full aspect-video object-cover" alt="Tampilan project portofolio">
+                        <div class="p-4 flex flex-col flex-1">
+                            <h2 class="text-[20px] font-semibold">1. Halaman Portofolio</h2>
+                            <p class="mt-1 text-[16px] opacity-80">Website portofolio pribadi menggunakan HTML, CSS, dan Tailwind.</p>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <span class="text-[13px] px-2 py-0.5 rounded-full bg-black/10 dark:bg-white/15">HTML5</span>
+                                <span class="text-[13px] px-2 py-0.5 rounded-full bg-black/10 dark:bg-white/15">CSS</span>
+                                <span class="text-[13px] px-2 py-0.5 rounded-full bg-black/10 dark:bg-white/15">Tailwind</span>
+                            </div>
+                            <a href="https://d-portofolio.vercel.app/" class="min-h-tap mt-auto inline-flex items-center justify-center px-6 rounded-full bg-systemblue text-white font-semibold">Lihat portofolio</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass rounded-apple overflow-hidden flex flex-col h-full" data-search="halaman biodata yoga pratama prtmyog17@gmail.com tabel form responsif">
+                        <img src="assets/image copy.png" class="w-full aspect-video object-cover" alt="Tampilan project biodata">
+                        <div class="p-4 flex flex-col flex-1">
+                            <h2 class="text-[20px] font-semibold">2. Halaman Biodata</h2>
+                            <p class="mt-1 text-[16px] opacity-80">Halaman biodata sederhana dengan tabel dan form responsif.</p>
+                            <ul class="mt-2 text-[13px] opacity-60 list-disc list-inside">
+                                <li>Yoga Pratama</li>
+                                <li>prtmyog17@gmail.com</li>
+                            </ul>
+                            <a href="index.html#tentang" class="min-h-tap mt-auto inline-flex items-center justify-center px-6 rounded-full border border-black/10 dark:border-white/20 text-systemblue font-semibold">Lihat biodata</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass rounded-apple overflow-hidden flex flex-col h-full" data-search="rust anchor smart contract solana struktur program akun instruksi">
+                        <img src="assets/image.png" class="w-full aspect-video object-cover" alt="Tampilan project smart contract Solana">
+                        <div class="p-4 flex flex-col flex-1">
+                            <h2 class="text-[20px] font-semibold">3. Rust Anchor Smart Contract</h2>
+                            <p class="mt-1 text-[16px] opacity-80">Smart contract Solana memakai Anchor (Rust): struktur program, akun, dan instruksi.</p>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <span class="text-[13px] px-2 py-0.5 rounded-full bg-black/10 dark:bg-white/15">Rust</span>
+                                <span class="text-[13px] px-2 py-0.5 rounded-full bg-black/10 dark:bg-white/15">Anchor</span>
+                                <span class="text-[13px] px-2 py-0.5 rounded-full bg-black/10 dark:bg-white/15">Solana</span>
+                            </div>
+                            <a href="https://github.com/Yogaprtamaa/contract-rust" class="min-h-tap mt-auto inline-flex items-center justify-center px-6 rounded-full bg-systemblue text-white font-semibold">Lihat di GitHub</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div id="emptyState" class="glass rounded-apple p-6 mt-4 text-center hidden">
+                    <p class="font-semibold">Proyek tidak ditemukan.</p>
+                    <p class="opacity-60 text-[15px] mt-1">Coba kata kunci lain, misalnya "HTML", "Tailwind", atau "Solana".</p>
+                </div>
+
+                <p class="mt-8">Lihat kode saya lainnya di <a class="text-systemblue" href="https://github.com/Yogaprtamaa">GitHub</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-8 text-[13px] opacity-60">
+        <p>&copy; 2026 Yoga Pratama</p>
+    </footer>
+
+    <script>
+        const t = document.getElementById('navToggle'), m = document.getElementById('mobileMenu');
+        t?.addEventListener('click', () => {
+            const open = m.classList.toggle('hidden');
+            t.setAttribute('aria-expanded', String(!open));
+        });
+
+        const params = new URLSearchParams(window.location.search);
+        const q = (params.get('q') || '').trim();
+        const input = document.getElementById('q');
+        const info = document.getElementById('searchInfo');
+        const empty = document.getElementById('emptyState');
+        const reset = document.getElementById('resetSearch');
+        const cards = Array.from(document.querySelectorAll('.project-card'));
+
+        input.value = q;
+
+        const needle = q.toLowerCase();
+        let visible = 0;
+
+        cards.forEach((card) => {
+            const match = !needle || card.dataset.search.includes(needle);
+            card.classList.toggle('hidden', !match);
+
+            if (match) {
+                visible++;
+            }
+        });
+
+        if (q !== '') {
+            info.textContent = `Hasil pencarian untuk "${q}": ${visible} proyek.`;
+            info.classList.remove('hidden');
+            reset.classList.remove('hidden');
+            reset.classList.add('inline-flex');
+        }
+
+        empty.classList.toggle('hidden', visible !== 0);
+    </script>
+</body>
+</html>

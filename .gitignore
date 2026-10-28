@@ -5,3 +5,7 @@ Modul_Pertemuan_3_Pemrograman_Web.docx.pdf
 .env
 .env.*
 !.env.example
+
+# File sistem / Vercel lokal
+.DS_Store
+.vercel
