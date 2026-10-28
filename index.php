@@ -1,52 +1,8 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portofolio Yoga Pratama - Junior Web Developer">
-    <title>Portofolio | Beranda</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'media',
-            theme: {
-                extend: {
-                    colors: { systemblue: '#007AFF', systemgreen: '#34C759', systemred: '#FF3B30' },
-                    fontFamily: { system: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro', 'system-ui', 'Segoe UI', 'sans-serif'] },
-                    borderRadius: { apple: '18px' },
-                    minHeight: { tap: '44px' },
-                    minWidth: { tap: '44px' }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="font-system">
-    <header class="px-4 pt-4">
-        <nav class="glass max-w-5xl mx-auto rounded-apple px-4 py-2">
-            <div class="flex items-center justify-between min-h-tap">
-                <a href="index.html" class="font-bold text-[17px] tracking-tight">Yoga Pratama</a>
-                <button id="navToggle" class="lg:hidden min-w-tap min-h-tap flex items-center justify-center rounded-full" aria-label="Toggle navigation" aria-expanded="false">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-                </button>
-                <div class="hidden lg:flex items-center gap-1">
-                    <a href="index.html" aria-current="page" class="min-h-tap inline-flex items-center px-4 rounded-full font-semibold text-systemblue">Beranda</a>
-                    <a href="index.html#tentang" class="min-h-tap inline-flex items-center px-4 rounded-full opacity-70 hover:opacity-100">Tentang Saya</a>
-                    <a href="porto.html" class="min-h-tap inline-flex items-center px-4 rounded-full opacity-70 hover:opacity-100">Proyek</a>
-                    <a href="contact.html" class="min-h-tap inline-flex items-center px-4 rounded-full opacity-70 hover:opacity-100">Kontak</a>
-                    <a href="contact.html" class="min-h-tap inline-flex items-center px-6 ml-2 rounded-full bg-systemblue text-white font-semibold">Let's talk</a>
-                </div>
-            </div>
-            <div id="mobileMenu" class="hidden lg:hidden pb-3 flex flex-col gap-1">
-                <a href="index.html" aria-current="page" class="min-h-tap flex items-center px-4 rounded-xl font-semibold text-systemblue">Beranda</a>
-                <a href="index.html#tentang" class="min-h-tap flex items-center px-4 rounded-xl">Tentang Saya</a>
-                <a href="porto.html" class="min-h-tap flex items-center px-4 rounded-xl">Proyek</a>
-                <a href="contact.html" class="min-h-tap flex items-center px-4 rounded-xl">Kontak</a>
-                <a href="contact.html" class="min-h-tap flex items-center justify-center px-4 rounded-full bg-systemblue text-white font-semibold mt-1">Let's talk</a>
-            </div>
-        </nav>
-    </header>
+<?php
+$title = 'Portofolio | Beranda';
+$active = 'beranda';
+require __DIR__ . '/partials/header.php';
+?>
 
     <main>
         <!-- Beranda -->
@@ -59,8 +15,8 @@
                         <p class="text-[17px] mt-1 opacity-80">Junior Web Developer</p>
                         <p class="mt-2 opacity-80">Saya belajar pengembangan web modern: HTML, CSS, dan smart contract Solana (Rust Anchor).</p>
                         <div class="mt-4 flex gap-2 justify-center md:justify-start flex-wrap">
-                            <a href="porto.html" class="min-h-tap inline-flex items-center px-6 rounded-full bg-systemblue text-white font-semibold">Lihat Proyek</a>
-                            <a href="contact.html" class="min-h-tap inline-flex items-center px-6 rounded-full glass font-semibold">Let's talk</a>
+                            <a href="porto.php" class="min-h-tap inline-flex items-center px-6 rounded-full bg-systemblue text-white font-semibold">Lihat Proyek</a>
+                            <a href="contact.php" class="min-h-tap inline-flex items-center px-6 rounded-full glass font-semibold">Let's talk</a>
                         </div>
                     </div>
                     <div class="text-center">
@@ -115,16 +71,4 @@
         </section>
     </main>
 
-    <footer class="text-center py-8 text-[13px] opacity-60">
-        <p>&copy; 2026 Yoga Pratama</p>
-    </footer>
-
-    <script>
-        const t = document.getElementById('navToggle'), m = document.getElementById('mobileMenu');
-        t?.addEventListener('click', () => {
-            const open = m.classList.toggle('hidden');
-            t.setAttribute('aria-expanded', String(!open));
-        });
-    </script>
-</body>
-</html>
+<?php require __DIR__ . '/partials/footer.php'; ?>
